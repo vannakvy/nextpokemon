@@ -1,8 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import styles from "../../styles/Detail.module.css";
+import Image from "next/image";
 
 export default function Detail() {
   const [pokimon, setPokimon] = useState({});
@@ -37,7 +39,7 @@ export default function Detail() {
         </Link>
     </div>
     <div className={styles.container}>
-        <img width={300} height={300} src={`https://jherr-pokemon.s3.us-west-1.amazonaws.com/${pokimon.image}`} alt={pokimon.name} />
+        <Image width={300} height={300} src={`https://jherr-pokemon.s3.us-west-1.amazonaws.com/${pokimon.image}`} alt={pokimon.name} />
     
     <div>
         <h1>{pokimon?.type?.join(", ")}</h1>
