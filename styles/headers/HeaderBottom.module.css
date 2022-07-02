@@ -1,0 +1,33 @@
+.header_bottom{
+  margin-top: -70px;
+}
+
+.header_bottom ul{
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #000066;
+    width: 100%;
+   
+}
+.header_bottom ul li{
+    color: #fff;
+    list-style: none;
+    font-weight: bold;
+    /* letter-spacing: 1.1px; */
+    /* font-size: 110%; */
+    margin:10px 25px;
+    transition: 0.5s;
+}
+.header_bottom ul li:hover{
+    transform: scale(1.1);
+    color:#ff6600;
+}
+
+@media screen and (max-width: 945px) {
+    .header_bottom ul li{
+        margin:2px;
+    }
+}

@@ -29,39 +29,44 @@ export default function Detail() {
     return null;
   }
 
-  return <div>
-    <Head>
+  return (
+    <div>
+      <Head>
         <title>{pokimon.name}</title>
-    </Head>
-    <div>
-        <Link href="/">
-            Back to Home
-        </Link>
-    </div>
-    <div className={styles.container}>
-        <Image width={300} height={300} src={`https://jherr-pokemon.s3.us-west-1.amazonaws.com/${pokimon.image}`} alt={pokimon.name} />
-    
-    <div>
-        <h1>{pokimon?.type?.join(", ")}</h1>
-        <h2>{pokimon.name}</h2>
-        <table>
+      
+      </Head>
+      <div>
+        <Link href="/">Back to Home</Link>
+      </div>
+      <div className={styles.container}>
+        <Image
+          width={300}
+          height={300}
+          src={`https://jherr-pokemon.s3.us-west-1.amazonaws.com/${pokimon.image}`}
+          alt={pokimon.name}
+        />
+
+        <div>
+          <h1>{pokimon?.type?.join(", ")}</h1>
+          <h2>{pokimon.name}</h2>
+          <table>
             <thead>
-                <tr>
-                    <td>Name</td>
-                    <td>Value</td>
-                </tr>
+              <tr>
+                <td>Name</td>
+                <td>Value</td>
+              </tr>
             </thead>
             <tbody>
-                {pokimon?.stats?.map(stat => <tr key={stat.name}>
-                    <td>{stat.name}</td>
-                    <td>{stat.value}</td>
-                </tr>)
-}
+              {pokimon?.stats?.map((stat) => (
+                <tr key={stat.name}>
+                  <td>{stat.name}</td>
+                  <td>{stat.value}</td>
+                </tr>
+              ))}
             </tbody>
-        </table>
-       
+          </table>
+        </div>
+      </div>
     </div>
-    
-    </div>
-    </div>;
+  );
 }

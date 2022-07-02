@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
+import Header from '../components/headers/Header'
 
 export default function Home() {
   const [pokimon, setPokimon] = useState([]);
@@ -18,11 +19,23 @@ export default function Home() {
    getPokimon();
   },[]);
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Pokimon App</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&family=Siemreap&display=swap"
+          rel="stylesheet"
+        />
+          <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
       </Head>
+      <Header/>
     <div className={styles.grid}>
+    
       {pokimon.map(pokemon => 
         <div key={pokemon.id} className={styles.card}>
         <Link href={`/pokemon/${pokemon.id}`}>
