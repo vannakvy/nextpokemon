@@ -50,7 +50,7 @@ export default function Detail() {
                 </tr>
             </thead>
             <tbody>
-                {pokimon?.stats?.map(stat => <tr>
+                {pokimon?.stats?.map(stat => <tr key={stat.name}>
                     <td>{stat.name}</td>
                     <td>{stat.value}</td>
                 </tr>)

@@ -22,7 +22,7 @@ export default function Home() {
       </Head>
     <div className={styles.grid}>
       {pokimon.map(pokemon => 
-        <div className={styles.card}>
+        <div key={pokemon.id} className={styles.card}>
         <Link href={`/pokemon/${pokemon.id}`}>
           <a>
             <img src={`https://jherr-pokemon.s3.us-west-1.amazonaws.com/${pokemon.image}`} alt={pokemon.name} />
